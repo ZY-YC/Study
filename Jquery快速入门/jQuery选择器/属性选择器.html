@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <script src="../Jquery.js"></script>
+</head>
+<body>
+  <a href="#" hreflang="en">英文</a>
+  <a href="#" hreflang="cn">中文</a>
+  <input name = "1" />
+  <input name = "2" />
+  <input name = "23" id="3"/>
+  <input name = "4" />
+  <script>
+      $(function() {
+          $("[hreflang = en]").css("color","red");
+          $("input[name = 1]").css("background","#00f");
+          $("input[name = 2]").val("background");
+          $("input[id][name$=3]").val("就是你");
+      })
+
+  </script>
+</body>
+</html>
+<!--
+    1.$("[attribute] |= 'value'") 选择指定属性值等于给定字符串或以该字符串为前缀（该字符串后跟一个连接符“-”）的元素
+    2.$("[attribute] *= 'value'") 选择指定属性具有包含一个给定的子字符的元素。（选择给定的属性是以包含某些值的元素）
+    3.$("[attribute] ~= 'value'") 选择指定属性用空格分隔的值中包含一个给定元素。
+    4.$("[attribute] = 'value'")  选择指定属性是给定的元素
+    4.$("[attribute] != 'value'") 选择不存在指定属性，或者指定的属性值不等于给定值的元素。
+    4.$("[attribute] $= 'value'") 选择指定属性是以给定结尾的元素。（比较区分大小写）
+
+
+-->

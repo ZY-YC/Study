@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position:relative</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 600px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        .box div {
+            width: 100px;
+            height: 100px;
+        }
+        .div1 {
+            background-color: red;
+            position:relative;
+            left:-100px;
+        }
+        .div2 {
+            background-color: lime;
+        }
+        .div3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</div>
+</body>
+</html>
+<!--
+    使用定位属性时i，一定要配合定位的坐标来使用
+    left 表示定位的元素离左边多远
+    right 表示定位的元素离右边多远
+    top 表示定位的元素离上边多远
+    bottom 表示定位的元素里下边多远
+-->
+<!--
+    relative:相对于原来的自己进行定位
+    特点:
+     1.相对定位元素没有脱离标准文档流
+     2.相对定位如果没有设置定位的坐标，那么相对定位元素它还在原来的位置
+     3.相对定位元素设置了定位的坐标以后，那么它会在老家留下一个坑
+     4.相对定位元素它会将标准文档流中的元素压盖住
+     5.相对定位为的元素坐标值可以是负数
+
+
+    注意：
+      相对定位元素它会在老家留下一个坑，所以一般情况下，它很少单独使用，一般是为了配合绝对定位元素来使用
+-->

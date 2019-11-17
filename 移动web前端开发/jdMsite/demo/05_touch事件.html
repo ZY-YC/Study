@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>touch事件</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+    var dom = document.querySelector('div');
+    /*给div绑定touch事件*/
+    window.onload = function() {
+        //手指刚触摸到屏幕时，触发的事件
+        dom.addEventListener('touchstart',function() {
+            console.log(1)
+        });
+        //手指在屏幕上滑动时，触发的事件
+        dom.addEventListener('touchmove',function() {
+            console.log(2);
+        });
+        //手指离开屏幕是触发的事件
+         dom.addEventListener('touchend',function() {
+            console.log(3);
+        });
+        dom.addEventListener('touchcancel',function() {
+            console.log(4);
+        })
+
+    }
+</script>
+</body>
+</html>

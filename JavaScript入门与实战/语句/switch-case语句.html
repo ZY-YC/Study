@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch-case语句</title>
+</head>
+<body>
+<input type="text" value="天气">
+<button type="button" onclick="w()">确定</button>
+<script>
+    function w() {
+        var a = document.getElementsByTagName("input");
+        console.log(a[0].value);
+        switch(a[0].value) {
+            case "Spring": alert("春天"); break;
+            case "Summer": alert("夏天"); break;
+            case "Winner": alert("冬天"); break;
+            case "Autumn": alert("秋天"); break;
+        }
+    }
+
+</script>
+</body>
+</html>

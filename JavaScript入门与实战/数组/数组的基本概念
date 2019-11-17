@@ -1,0 +1,110 @@
+数组：
+
+   目录：
+    1.基本概念
+    2.获取数组元素
+    3.遍历数组元素
+    4.求数组元素的和（小案例）
+    5.循环遍历数组 （小案例）
+
+
+
+  一： 基本概念：
+    一个变量存储多个值的存储方法，即数组的存储方法
+    <script>
+    //第一
+         var arr = ["a","b","c"];
+         var arr2 = [1,2,3];
+
+         console.log(arr[1]);//取出b
+
+     //第二：字面量方式声明数组
+         var a1 = []; //空数组
+         var a2 = [1,"a"];
+         console.log(a2);//打印a2中的全部数据
+
+     //第三：声明构造函数方式声明数组
+         var a3 = new Array(1,3,"h");
+         console.log(a3);
+
+         var a4 = new Array(1,2,a3,"d");//数组中也可有数组  多维数组
+
+     //获取数组长度 a3.length;
+         console.log(a3.length);
+         console.log(a4.length);
+    </script>
+
+       数组就相当于一个储物柜，储物柜有按顺序排好的小储物箱，每个小储物箱都有一个序号，可以放置很多东西，
+    同时我们也可以按照序号取东西出来
+
+
+  二：
+    获取数组元素：
+
+      <script>
+
+          //数组内容的标号称之为下标
+          var a1 = ["red","green","yellow"];
+          console.log(a1[0]); //获取数组下标为0的元素
+
+
+          var a2 = ["路费","路飞",[1,2,3]];
+          console.log(a2[2][2]);//将3打印出来
+      </script>
+
+
+
+  三：
+     遍历数组元素:
+        <script>
+           var a1 = [1,2,3,4,5,6,7,8];
+           for(var i = 0; i < a1.length; i++) {
+               console.log(a1[i]);
+               console.log("\n");
+           }
+
+        </script>
+
+
+
+  四：
+     求数组元素的和：
+        <script>
+           var a1 = [1,2,3,4,5,6,7,8];
+           var sum = 0;
+                for(var i = 0; i < a1.length; i++) {
+                    sum += a1[i];
+                 }
+           console.log(sum);
+
+        </script>
+
+
+   五:
+      循环遍历数组：
+         <script>
+            var a1 = [1,2,9,4,5,6,7,8];
+            var max = 0;
+            //打印出数组中最大的值
+            for(var i = 0; i < a1.length; i++) {
+                if(a1[i] > max) {
+                    max = a1[i];
+                }
+            }
+            console.log(max);
+
+            //打印出 1|2|9|4|5|6|7|8
+            var string = "";
+            for(var i = 0; i < a1.length; i++) {
+                string += a[i] + "|";
+
+            }
+
+
+         </script>
+
+       
+
+
+
+

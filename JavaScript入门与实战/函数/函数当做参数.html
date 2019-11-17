@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数当参数</title>
+</head>
+<body>
+
+</body>
+<script>
+   //  function f1(s) {
+   //      // console.log(s);
+   //      s();//若传过来的是s是函数，用s();
+   //  }
+   // var f =  function() {
+   //      console.log(123);
+   //  };
+   //  f1(f);
+   //  //function类型（属于Object对象类型）
+   //  console.log(typeof f1);
+
+    //f2函数会被当做值，传入f1函数内
+    //回调 f1(f2);
+    function f1(){
+        var a = 10;
+        var f2 = function () {
+            alert(a);
+        };
+        // return f2();
+        return f2;
+    }
+    //闭包
+    var k =  f1();
+    k();
+</script>
+</html>

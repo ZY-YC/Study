@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+
+    <title>Tap 事件</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100%;
+            height: 200px;
+            background-color: #d8505c;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+    window.onload = function() {
+    //    tap 轻触
+        //与移动端的click事件有关
+
+
+        //click事件在移动端特点：
+        //300ms左右延时
+        //问题： 造成响应过慢 用户体验下降
+        //解决：
+        // 方案一：tap（是比click响应更快的时间）--非原生 是通过touch衍生过来的
+        //
+
+        var div = document.querySelector('div');
+
+        // div.addEventListener('click',function() {
+        //     console.log("click");
+        // });
+        /*
+        /满足什么条件才认为是tap
+        1.肯定要比click响应快  150ms以内
+        2.不能滑动
+
+        称为tap事件
+         */
+        //记录开始触摸屏幕的时间
+        var startTime = 0;
+        var isMove = false;
+        div.addEventListener('touchstart',function() {
+            startTime = Date.now();
+            //给定一个参数，开始记录时间
+            console.time('time');
+        });
+        div.addEventListener('touchmove',function() {
+            console.log("touchmove");
+            isMove = true;
+        });
+        div.addEventListener('touchend',function() {
+            //2.更新现在的时候去比较记录开始触摸的事件 如果小于150ms 满足条件
+
+            //去除某个参数，和现在时间的差
+            // console.timeEnd('time');
+            // console.log;
+            if(!isMove && (Date   .now() - startTime) <150) {
+                console.log('tap');
+            }
+             startTime = 0;
+             isMove = false;
+        });
+    }
+</script>
+</body>
+</html>

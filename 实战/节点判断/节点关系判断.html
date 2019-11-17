@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id = "p-node">
+    <div id="c-node">子节点内容</div>
+</div>
+<script>
+    //对所有的浏览器都兼容
+    function fixContains(a,b){
+        try {
+            while((b === b.parentNode)){
+
+                if(b === a){
+                    return true;
+                }
+                return false;
+            }
+        } catch(e) {
+            return false;
+        }
+    }
+    var pNode = document.getElementById("p-node");
+    var cNodeOne = document.getElementById("c-node");
+    var cNode = document.getElementById("c-node").childNodes[0];
+    // alert(pNode.contains(cNode));
+    alert(document.contains(cNode));//document中存在contains兼容问题，IE浏览器不支持此接口
+    alert(pNode.contains(cNode));//文本节点也存在contains兼容问题，IE浏览器不支持此接口
+    alert(fixContains(pNode,cNodeOne));
+    alert(fixContains(document,cNode));
+    alert(fixContains(pNode,cNode));
+</script>
+</body>
+</html>

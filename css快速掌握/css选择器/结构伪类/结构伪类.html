@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构伪类</title>
+    <style>
+        /*
+           匹配第一个孩子 格式： E:first-child
+           匹配最后一个元素 格式： E:last-child
+           匹配第n个孩子 格式： E :nth-child()
+           匹配偶数的孩子 格式：E:nth-child(even)
+           匹配奇数的孩子  格式 E:nth-child(odd)
+           匹配有且只有一个孩子 格式 E:only-child
+        */
+        /*.box ul li:first-child {*/
+             /*color: red;*/
+             /*width: 100px;*/
+             /*height: 30px;*/
+             /*border: 1px solid #00ff00;*/
+         /*}*/
+        /*.box ul li:last-child {*/
+            /*color: red;*/
+            /*width: 100px;*/
+            /*height: 30px;*/
+            /*border: 1px solid #00ff00;*/
+        /*}*/
+        /*.box ul li:nth-child(3) {*/
+            /*color: red;*/
+            /*width: 100px;*/
+            /*height: 30px;*/
+            /*border: 1px solid #00ff00;*/
+        /*}*/
+        .box ul li:nth-child(even) {
+            color: red;
+            width: 100px;
+            height: 30px;
+            border: 1px solid #00ff00;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>黑马程序员1</li>
+        <li>黑马程序员2</li>
+        <li>黑马程序员3</li>
+        <li>黑马程序员4</li>
+        <li>黑马程序员5</li>
+        <li>黑马程序员6</li>
+        <li>黑马程序员7</li>
+        <li>黑马程序员8</li>
+        <li>黑马程序员9</li>
+        <li>黑马程序员0</li>
+    </ul>
+</div>
+</body>
+</html>
+<!--
+   :first-child
+   :last-child
+   :nth-child()
+   :nth-child(even)
+   :nth-child(odd)
+   :only-child
+-->

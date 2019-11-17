@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定事件处理器</title>
+    <script src = '../Jquery.js'></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>li1</li>
+    <li>li2</li>
+    <li>li3</li>
+    <li>li4</li>
+</ul>
+<button id="btn">button</button>
+<script>
+    $(function() {
+        // $("#btn").bind({
+        //     click:function(event) {
+        //        alert("点击弹出");
+        //     },
+        //     mouseover:function() {
+        //         alert("鼠标滤过")
+        //     }
+        // })
+        $("#btn").on({
+            click:function(event) {
+                alert("点击弹出");
+            }
+        });
+        $("ul").one("click","li",function() {
+            alert("点击弹出");
+        })
+    })
+</script>
+</body>
+</html>
+<!--
+    1. .bind() 给元素添加事件 已用on事件
+        可以有两个参数，第一个为时间类型  第二个为事件函数 第三个参数为布尔型
+    2. .delegate() 事件委托 已用on事件代替
+    3. .off() 移除事件处理函数 与on相对应，只能移除on事件
+    4. .on()
+    5. .one() 对元素添加的事件只执行一次
+    6. .unbind()
+    7. .undelegate()
+-->

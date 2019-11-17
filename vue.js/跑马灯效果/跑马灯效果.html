@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跑马灯效果</title>
+    <!--<script SRC="../../../../front-end tools/vue/vue"></script>-->
+    <script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <input type="button" value="跑起来" @click="run">
+    <input type="button" value="累了" @click="stop">
+    <p>{{msg}}</p>
+</div>
+<script>
+    var v = new Vue({
+        el:'#app',
+        data:{
+            msg:'猥琐发育，别浪！稳住！我们能赢！！we can we do',
+            intervalId:null//在data上定义 定时器id
+        },
+        methods:{
+            run() {
+                console.log(this.msg);
+                if(this.intervalId != null) return ;
+                this.intervalId =setInterval(() => {
+                    var start = this.msg.substring(0,1);
+                    var end = this.msg.substring(1);
+                    this.msg = end + start;
+                },400);
+            },
+            stop() {
+                //停止定时器
+                clearInterval(this.intervalId);
+                //每当清除了定时器后，intervalId重新赋值为null
+                this.intervalId = null;
+            }
+        }
+    })
+</script>
+</body>
+</html>

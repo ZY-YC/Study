@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动回调</title>
+    <script src="../Jquery.js"></script>
+    <style>
+        #content {
+            padding: 50px;
+            display: none;
+        }
+        #flipshow,#fliphide,#flip,#content{
+            padding: 5px;
+            text-align: center;
+            background-color: #fc8800;
+            border: 1px solid #00ff00;
+        }
+    </style>
+</head>
+<body>
+<!--<div id="flipshow">点击显示</div>-->
+<!--<div id="fliphide">点击隐藏</div>-->
+<!--<div id="flip">点击隐藏/显示</div>-->
+<!--<div id="content">hello</div>-->
+<p>Hello</p>
+<button>hide</button>
+<script>
+$(function() {
+    // $("#flipshow").click(function() {
+    //     $("#content").slideDown(1000)
+    // });
+    // $("#fliphide").click(function() {
+    //     $("#content").slideUp(1000)
+    // });
+    // $("#flip").click(function() {
+    //     $("#content").slideToggle(1000)
+    // });
+    $("button").click(function() {
+        // $("p").hide(1000,function() {
+        //     alert("动画完毕，此方法为回调");
+        // })
+        $("p").slideUp(1000).slideDown(1000);
+    })
+
+})
+</script>
+</body>
+</html>

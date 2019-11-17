@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/bootstrap-3.3.7/dist/css/bootstrap.css" />
+    <style>
+        li:hover{
+            background-color: #5e5e5e;
+        }
+        .v-enter,.v-leave-to{
+            opacity: 0;
+            transform: translateY(80px);
+        }
+        .v-enter-active,.v-leave-active{
+            transition: all 0.8s ease;
+        }
+        .v-move {
+            transition: all 0.8s ease;
+        }
+        .v-leave-active{
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div>
+        <label>
+            Id:
+            <input type="text" v-model="id">
+        </label>
+        <label>
+            name:
+            <input type="text" v-model="name">
+        </label>
+        <input type="button" value="添加" @click="add">
+    </div>
+    <ul>
+<!--        appear实现入场效果-->
+        <transition-group appear>
+<!--            //若要为v-for循环创建元素设置动画，必须为每一个元素设置：key属性-->
+            <li v-for="item in list" :key="item.id" @click="del(item.id)">
+                {{item.id}}------{{item.name}}
+            </li>
+        </transition-group>
+
+        <br/>
+    </ul>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            id:'' ,
+            name:'',
+            list:[
+                {id:1,name:"张三"},
+                {id:2,name:"李四"},
+                {id:3,name:"王五"}
+            ]
+        },
+        methods:{
+            add(){
+                 this.list.push({id:this.id,name:this.name});
+                 this.id = this.name= ''
+            },
+            del(i){
+                this.list.splice(i-1,1);
+
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

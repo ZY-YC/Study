@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/bootstrap-3.3.7/dist/css/bootstrap.css" />
+    <style>
+        /*v-enter [这是一个时间点] 是进入之前，元素的初始状态，此时还没有开始进入*/
+        /*v-leave-to 【这是一个时间点】 是动画离开之后，离开的终止状态，此时，动画已经结束了*/
+        .v-enter,.v-leave-to{
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        .v-enter-active,.v-leave-active{
+            transition: all 0.4s ease;
+        }
+        .my-enter,.my-leave-to{
+            opacity: 0;
+            transform: translateX(150px);
+        }
+        .my-enter-active,.my-leave-active{
+            transition: all 0.4s ease;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="toggle" @click = "flag=!flag">
+<!--    transition元素是Vue官方提供的，用于把被动画控制的元素，包裹起来-->
+    <transition class="v-enter v-leave-to v-enter-active v-leave-active">
+        <h3 v-if="flag">这是一个h3</h3>
+    </transition>
+    <input type="button" value="toggle" @click = "flag2=!flag2">
+    <transition class="my-enter my-leave-to my-enter-active my-leave-active">
+        <h v-if="flag2">这是一个h6</h>
+    </transition>
+</div>
+<script>
+var vm =new Vue({
+    el:"#app",
+    data:{
+        flag:false,
+        flag2:false
+    },
+    methods:{}
+})
+</script>
+</body>
+</html>

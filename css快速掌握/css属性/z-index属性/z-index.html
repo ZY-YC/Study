@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .div1 {
+            background-color: #f00;
+            position:absolute;
+            z-index:6;
+            left:200px;
+            top:200px;
+        }
+        .div2 {
+            background-color: #00f;
+            position: absolute;
+            z-index:1;
+            left:100px;
+            top:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+</body>
+</html>
+<!--
+  z-index:
+    1.z-index 表示谁压盖着谁，数值大的压盖数值小的。
+    2.只有定位的元素才有z-index值  只有设置了固定定位、相对定位、绝对定位的元素才拥有z-index;
+    3.z-index 的值是没有单位的 值是一个正整数 默认的z-index值是0；
+    4.如果多个定位元素没有设置z-index属性 或者 z-index值设置一样 那么写在HTML后面的定位元素
+    就会压盖住前面的定位元素
+-->

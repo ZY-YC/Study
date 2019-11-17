@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数值类型转换</title>
+</head>
+<body>
+        <script>
+            var a = "1";
+            var b = Number(a);
+            var c = Number(null);
+            var d = Number(undefined);
+            var e = Number(true);
+            console.log(b);
+            console .log(typeof b);
+            console.log(c);
+            console .log(typeof c);
+            console.log(d);
+            console .log(typeof d);
+            console.log(e);
+            console .log(typeof e);
+
+            console.log(parseInt("1.265.123.456"));
+            console .log(typeof parseFloat("1.265.123.456"));
+            console.log(parseInt("12"));
+            console .log(typeof parseInt("12"));
+
+
+        </script>
+</body>
+</html>
+<!--
+
+   1.Number():其他类型转换为数值型
+   2.parseInt();
+     parseFloat();
+
+-->

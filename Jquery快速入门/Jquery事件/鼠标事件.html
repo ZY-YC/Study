@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件</title>
+    <script src ="../Jquery.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<p>hh</p>
+<p>hh</p>
+<p>hh</p>
+<p>hh</p>
+<p>hh</p>
+<script>
+    //JS
+ // var p = document.getElementsByTagName("p");
+ // for(var i = 0; i < p.length; i++) {
+ //     p[i].onclick = function() {
+ //         alert(this.innerHTML);
+ //     }
+ // }
+    //jquery
+    $(function() {
+        // $("p").click(function() {
+        //     alert($(this).html());
+        // });
+        $("p").dblclick(function() {
+            alert("双击");
+        })
+
+    })
+</script>
+</body>
+</html>
+<!--
+
+    1. .click() 点击事件
+    2. .dblclick() 双击事件
+    3. .hover() 鼠标悬停和离开
+    4. .mousedown() 鼠标按下
+    5. .mouseenter() 鼠标进入元素
+    6. .mouseleave() 鼠标离开元素
+    7. .mousemove() 鼠标在元素内移动
+    8. .mouseout() 鼠标离开元素（支持冒泡事件）
+    9. .mouseover() 鼠标进入元素内（支持事件冒泡）
+   10. .mouseup() 鼠标按键被释放
+-->

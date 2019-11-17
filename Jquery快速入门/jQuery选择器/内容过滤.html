@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容过滤</title>
+    <script src="../Jquery.js"></script>
+</head>
+<body>
+<div id = "a">John Resig</div>
+<div>John1</div>
+<div>John2</div>
+<div>John3</div>
+<div>
+    <span>John</span>
+</div>
+<h1></h1>
+<script>
+    $(function() {
+        $("div:contains(Resig)").css("color","red");
+        $("h1:empty").css("background-color","red").css("height","100px").css("width","100px").text("空");
+        $("div:parent").css("background-color","blue");
+        $("div:has(span)").css("font-size","60px");
+
+    })
+</script>
+</body>
+</html>
+<!--
+
+    1. $(":contains(text)")
+       选择包含指定文本的元素
+    2. $(":empty")
+       选择所有没有子元素的元素（包含文本节点）
+    3. $(":has(selector")
+       选择元素其中至少包含指定选择器匹配的一种元素
+    4. $(":parent")
+       选择所有含有子元素或文本的父级元素
+
+-->

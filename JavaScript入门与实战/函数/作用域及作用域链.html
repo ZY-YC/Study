@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域和作用域链</title>
+</head>
+<body>
+<script>
+    var a = 3;
+    function f1() {
+
+        function f2() {
+             var a = 4;
+            function f3() {
+                //在函数中，使用某个变量时，优先在自己的作用域查找，找不到就会向上一层作用域查找
+
+                console.log(a);
+            }
+            f3();
+        }
+        f2();
+    }
+    f1();
+</script>
+</body>
+</html>
+<!--
+   只有函数可以制作作用域
+-->

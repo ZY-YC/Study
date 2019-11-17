@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单选择器</title>
+    <script src="../Jquery.js"></script>
+    <style>
+        textarea {
+            height: 30px;
+        }
+        div {
+            color:red;
+        }
+        fieldset {
+            margin: 0;
+            padding: 0;
+            border-width: 0;
+        }
+
+        .market {
+            background-color: lime;
+            border:3px solid #9F79EE;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <fieldset>
+        <input type = "button" value = "Input Button" />
+        <input type = "checkbox"/>
+        <input type = "file" disabled="disabled"/>
+        <input type = "image" />
+        <input type = "hidden"/>
+        <input type = "password"/>
+        <input type = "radio"/>
+        <input type = "reset"/>
+        <input type = "submit"/>
+        <input type = "text"/>
+        <select>
+            <option>
+                Option
+            </option>
+        </select>
+        <textarea></textarea>
+        <button>Button</button>
+    </fieldset>
+</form>
+<div></div>
+<script>
+   $(function() {
+       // var input = $(":button").addClass("market");
+       // $(":image").addClass("market");
+       // $(":input").addClass("market");
+       $(":disabled").addClass("market");
+   })
+</script>
+</body>
+</html>
+<!--
+
+    1. $(":button") 选择所有按钮元素和类型为按钮的元素
+    2. $(":checkbox") 选择所有类型为复选框的元素
+    3. $(":checked") 匹配所有勾选的元素
+    4. $(":disabled") 选择所有被禁用的元素
+    5. $(":enabled") 选择所有可用元素
+    6. $(":file") 选择所有类型为文件的元素
+    7. $(":focus") 选择当前获取焦点的元素
+    8. $(":image") 选择所有图片类型的元素
+    9. $(":input") 选择所有input textarea select 和 button元素
+   10. $(":password") 选择所有密码元素
+   11. $(":radio") 选择所有类型为单选框的元素
+   12. $(":submit") 选择所有类型为提交的元素
+-->

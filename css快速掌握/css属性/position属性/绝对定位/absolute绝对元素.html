@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position:absolute</title>
+    <style>
+        * {
+            margin:0;
+            padding: 0;
+        }
+        .box {
+            width: 600px;
+            border:1px solid #000;
+            margin: 100px auto;
+            position:relative;
+        }
+        .box div {
+            width: 100px;
+            height: 100px;
+        }
+        .div1 {
+            background-color: blue;
+        }
+        .div2 {
+            background-color: lime;
+            position:absolute;
+            left:0;
+        }
+        .div3 {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</div>
+</body>
+</html>
+<!--
+    使用定位属性时i，一定要配合定位的坐标来使用
+    left 表示定位的元素离左边多远
+    right 表示定位的元素离右边多远
+    top 表示定位的元素离上边多远
+    bottom 表示定位的元素里下边多远
+-->
+<!--
+    absolute:绝对定位相对于"祖先定位元素"来进行定位;
+    absolute:
+        1.绝对定位元素脱离了标准定位流
+        2.绝对定位元素它不占用空间
+        3，绝对定位元素会覆盖标准流中的元素
+        4.绝对定位元素相对于"祖先定位元素"来进行定位，这里的祖先可以是相对定位也可以是固定定位，
+        但一般我们只会给祖先定位元素设置相对定位属性 “子绝父相”：子绝对元素 父相对元素
+       
+-->

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-index</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background: red ;
+            position: absolute;
+            /*z-index:-1;*/
+            left:0;
+            top:0;
+        }
+        .div2{
+            width: 100px;
+            height: 100px;
+            background: blue  ;
+           /* margin-top: -50px;*/
+            position: relative;
+           /* top:50px;*/
+        }
+        .per{
+            width: 200px;
+            height: 200px;
+            background: green ;
+            z-index:11;
+            top:-50px;
+        }
+        .test{
+            width: 100px;
+            height: 100px;
+            background: #CCC;
+            position: relative;
+            z-index:1;
+        }
+    </style>
+</head>
+<body>
+ <div class="div1"></div>
+ <div class="div2"></div>
+<div class="per">
+    <div class="test"></div>
+</div>
+</body>
+</html>

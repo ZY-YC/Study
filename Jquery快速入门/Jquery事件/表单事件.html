@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单事件</title>
+    <script src="../Jquery.js"></script>
+</head>
+<body>
+  <form id="form">
+      <input id = "target" type="text" value="field 1">
+      <input type="text" value="field">
+      <input type="submit" value="go">
+  </form>
+<script>
+    $(function() {
+        // $("#target").focus(function() {
+        //     alert("获得焦点事件");
+        // });
+        // $("input").blur(function() {
+        //     alert("失去焦点事件");
+        // })
+        $("#target").change(function() {
+            alert("内容改变");
+        });
+        $("input").select(function() {
+             alert("选择");
+        });
+        $("#form").submit(function() {
+            alert("确定提交吗");
+        })
+    })
+</script>
+</body>
+</html>
+<!--
+
+   1. focus() 获焦点事件
+   2. blur()  失焦事件
+   3. change() 一个值改变的时候就会触发
+       只适用于input textarea select
+   4. select() 当用户进行文本选择时会触发
+       只适用于input type=“text” textarea select
+   5. submit() 当用户试图提交表单是触发
+       只能绑定在form表单上
+
+-->

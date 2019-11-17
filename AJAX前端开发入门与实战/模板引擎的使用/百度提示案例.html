@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度提示词</title>
+    <script src="封装.js"></script>
+    <script>
+        window.onload=function() {
+            var btn = document.querySelector("#btn");
+            btn.onclick = function() {
+                var keyword = document.querySelector("#keyword").value;
+                console.log(keyword);
+                window["cb"] = function(data) {
+                    console.log(data);
+                    console.log(data.s.length);
+                    var item = "";
+                    for (let i = 0; i <  data.s.length; i++) {
+                        var it = data.s[i];
+                        item += "<li>" +it +"</li>"
+                    }
+                    var ulTag = document.querySelector("ul");
+                    ulTag.innerHTML=item;
+                };
+                var script = document.createElement("script");
+                script.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + keyword + "&cb=cb";
+                var head = document.querySelector("head");
+                head.appendChild(script);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="keyword" placeholder="请输入要查询的关键字">
+<input type="button" id="btn" value="查询">
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

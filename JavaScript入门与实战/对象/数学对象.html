@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数学对象</title>
+</head>
+<body>
+<script>
+    // Math 是一个内置对象，它具有数学常数和函数的属性和方法。不是一个函数对象。
+    //与其他全局对象不同的是，Math不是一个构造器，Math不是一个构造器，Math的所
+    //有属性和方法都是静态的，跟数学有关的运算直接使用Math中的成员即可
+
+    var m = -1;
+    console.log(Math.abs(m));
+    console.log(Math.random());//随机数在[0,1]之间
+    console.log(Math.random()*10);//随机数在[0,10]之间
+
+     var v1 = Math.random()*10;
+     console.log(Math.floor(v1));//取整
+
+
+    var v2 = Math.random() * (8-2) + 2; //2-8之间
+    console.log(Math.floor(v2));
+
+
+</script>
+</body>
+</html>

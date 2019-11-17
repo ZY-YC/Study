@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch(输出星期)</title>
+</head>
+<body>
+<script>
+    var week = new Data.getDay();
+    switch(week === 0)
+    {
+        case 0:
+            document .write(("今天是星期天"));
+            break;
+        case 1:
+            document .write ("今天是星期一");
+            break;
+        case 2:
+            document .write ("今天是星期二");
+            break;
+        case 3:
+            document .write ("今天是星期三");
+            break;
+        case 4:
+            document .write("今天是星期四");
+            break;
+        case 5:
+            document .write ("今天是星期五");
+            break;
+        default:
+            document .write ("今天是星期六");
+    }
+   document .write ("今天是",weekstr);
+</script>
+</body>
+</html>

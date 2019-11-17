@@ -1,0 +1,1 @@
+define("common/js/advertisementReport",["require","exports","module"],function(){!function(){var n=function(){var n={};n.adv_id=$(this).data("adver-id");var a=$(this).data("jump-url");$.ajax({type:"POST",url:"/index/ajaxadvclickcount",data:n,dataType:"json",success:function(){},error:function(n){}}),window.open(a)};$(".js-advertisement").on("click",function(){n.call(this)})}()});

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地理定位</title>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script>
+        //获取当前地理位置
+        function init() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var coords = position.coords;
+                //设置地图经纬度，将用户当前地理位置的经纬度设为地图的中心点
+                var latlng = new google.maps.LatLng(coords.latitude,coords.longitude);
+                var myOptions = {
+                    zoom:14,
+                    center:latlng,
+                    mapTypeId:google.maps.MapTypeId.ROADMAP
+                };
+                //创建地图并“map”div中显示
+                var map1;
+                map1 = new google.maps.Map(document.getElementById("map"),myOptions);
+                //在地图上创建标记
+                var marker = new google.maps.Marker({
+                    position:latlng,
+                    map:map1
+                });
+                //设置标准窗口，并制定该窗口的注释文字
+                var infowindow = new google.maps.InfoWindow({
+                    content:"当前位置"
+                });
+                infowindow.open(map1,marker);
+            })
+        }
+    </script>
+</head>
+<body onload="init()">
+ <div id="map" style="width: 400px;height: 400px;" >
+
+ </div>
+</body>
+</html>
+<!--
+   HTML5 Geolocation API 用于获得用户的地理位置
+
+-->

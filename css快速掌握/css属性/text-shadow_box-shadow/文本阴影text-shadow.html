@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本阴影</title>
+    <style>
+        .box {
+            font: 40px "楷体" ;
+            color:#32CD32;
+            text-shadow: 3px 3px 3px #444444 ;
+        }
+        .box_two {
+            font: 40px "楷体" ;
+            color:#32CD32;
+            text-shadow: 3px 3px 3px #444444,-4px -4px 3px #9F79EE  ;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    黑马程序员
+</div>
+<div class="box_two">博客</div>
+</body>
+</html>
+<!--
+    h-shadow: 必须 水平阴影的位置。允许负值
+    v-shadow: 必须 垂直阴影的位置。允许负值
+    blur: 可选 模糊的距离
+    color:  可选 阴影的颜色
+
+
+    1.文字阴影可以有多组值，多组值之间用逗号隔开就可以
+    2.水平阴影正值阴影在右边 负值在左边
+    3.垂直阴影正值在下方，负值在上边
+    4.模糊强度，值越大越模糊
+-->

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现小球半场动画</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/bootstrap-3.3.7/dist/css/bootstrap.css" />
+<style>
+    .ball{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="加入购物车" @click="flag=!flag">
+    <transition
+            @before-enter="beforeEnter"
+            @enter="Enter"
+            @after-enter="afterEnter">
+            <div class="ball" v-show="flag"></div>
+    </transition>
+</div>
+
+<script>
+    var  vm = new Vue({
+        el:"#app",
+        data:{
+            flag:false
+        },
+        methods:{
+            //el表示要执行动画的那个DOM元素，是个原生的JS DOM对象
+            //el是通过document.getElementById("")获取到的
+            beforeEnter:function(el){
+                //表示冬菇哈入场之前，此时，动画尚未开始
+
+                el.style.transform = "translate(0,0)"
+            },
+            Enter(el,done){
+                //表示动画 开始之后的样式 这里 可以设置小球完成动画之后，结束状态
+
+                el.offsetWidth;
+                el.style.transform="translate(150px,450px)";
+                el.style.transition="all ls ease";
+                done();
+            },
+            afterEnter(el){
+                this.flag =! this.flag;
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

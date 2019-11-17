@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素</title>
+    <style>
+         .box {
+             width: 40%;
+             margin: 100px auto;
+             font-size: 14px;
+             border:1px solid #444;
+             color:#333;
+         }
+        .box:first-letter {
+            color:#f00;
+            font-size: 40px;
+            padding:20px;
+        }
+        .box:first-line {
+            color: #9F79EE;
+        }
+        .box::before {
+            content: "黑马程序员";
+        }
+        .box::after {
+            content: "hello";
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+            故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事
+        故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事
+        故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事
+        故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事故事
+        故事故事故事故事故事故事故事
+    </div>
+</body>
+</html>
+<!--
+
+    :first-letter 操作元素中的第一个字
+    :first-line  操作元素中的第一行
+    ::before  要在当前元素的最前面插入文字
+    ::after   要在当前元素的最后面插入文字
+
+-->

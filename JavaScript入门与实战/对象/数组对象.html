@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组对象</title>
+</head>
+<body>
+<script>
+    //常用的数组操作
+
+    var arr = [1,2,3,4,5,6,7,8,9,0];
+    var length = arr.length;
+    console.log(length);
+    //添加元素
+    var k = 11;
+    arr.push(k);
+    console.log(arr);
+    //删除元素
+    arr.pop();
+    console.log(arr);
+    //删除自定义字段
+    console.log(arr.slice(0,9));
+    console.log(arr);
+
+    //concat 合并数组
+    var NewArr2 = arr.concat(arr);
+    console.log(NewArr2);
+    console.log(NewArr2.toString());
+
+    var NewArr3 = arr.join();
+    console.log(NewArr3);
+    var NewArr4 = arr.join("--");
+    console.log(NewArr4);
+</script>
+</body>
+</html>

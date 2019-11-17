@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他字符转换为字符串</title>
+</head>
+<body>
+    <script>
+        var n = 5;
+        var m = n.toString();
+        console.log(typeof m);
+
+        console.log(typeof String(n));
+        console.log(typeof n+"");
+        console.log(typeof (n+""));
+
+
+        var t = true;
+        console.log(String(t));
+        console.log(typeof String(t));
+    </script>
+</body>
+</html>
+<!--
+   1.  .toString():将其他类型转为字符串;
+   2. String();
+   3. +;
+-->

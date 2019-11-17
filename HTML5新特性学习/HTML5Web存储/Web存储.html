@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web存储</title>
+    <!--<script>-->
+        <!--var ta;-->
+        <!--var btn;-->
+        <!--window.onload=function(){-->
+            <!--ta = document.getElementById("ta");-->
+            <!--if(localStorage.text) {-->
+                <!--ta.value = localStorage.text;-->
+            <!--}-->
+            <!--btn = document.getElementById("btn");-->
+            <!--btn.onclick=function () {-->
+                <!--alert(ta.value);-->
+                <!--localStorage.text = ta.value;-->
+            <!--}-->
+        <!--};-->
+
+
+    <!--</script>-->
+    <script>
+        var num = 0;
+        var txt;
+        var btn;
+        window.onload = function() {
+            txt = document.getElementById("txt");
+            btn = document .getElementById("addbtn");
+            if(sessionStorage.num) {
+                num = sessionStorage.num;
+            }else{
+                num = 0;
+            }
+            btn.onclick = function() {
+                num++;
+                sessionStorage.num = num;
+                showNum();
+            }
+        };
+        function showNum() {
+            txt.innerHTML = num;
+        }
+    </script>
+</head>
+<body>
+   <!--<textarea style="height: 200px; width: 200px" id="ta"></textarea>-->
+   <!--<button id="btn"></button>-->
+   <span id="txt">0</span>
+   <button id="addbtn">add</button>
+</body>
+</html>
+<!--
+   localStorage -没有时间限制的数据存储
+   sessionStorage -针对一个session的数据存储之前，这些是由cookie来完成的。
+
+
+-->

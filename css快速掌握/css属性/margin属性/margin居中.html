@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin居中</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ff0000;
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            /*margin-top: 100px;*/
+            /*margin-bottom: 100px;*/
+            margin:100px auto;
+        }
+        p {
+            height: 50px;
+            background-color: lime;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<p></p>
+</body>
+</html>
+<!--
+   行内元素无法设置宽度，实现不了水平居中
+   只有标准文档流中才可以使用margin来实现水平居中
+   margin属性是用来实现盒子的水平居中，而不是文本的水平居中text-align实现文本居中而非盒子居中
+-->

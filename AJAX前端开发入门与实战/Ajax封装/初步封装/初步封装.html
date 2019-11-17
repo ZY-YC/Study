@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册界面</title>
+    <script type="application/javascript">
+        //uname = zhangsan&age=18
+        function myAjax(type,url,params,dataType,callback) {
+            var xhr = null;
+            if(window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest()
+            } else {
+                xhr = new ActiveXObject("Micorsoft.XMLHTTP")
+            }
+            if(type === "get") {
+                url += "?"+ params;
+            }
+            xhr.open(type,url,true);
+            if(type === "get") {
+                xhr.send(null)
+            } else if (type === "post") {
+                xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xhr.send(params);
+            }
+            xhr.onreadystatechange= function(){
+                if(xhr.readyState === 4){
+                    if(xhr.status === 200){
+                        var result = null;
+                        if(dataType === "json") {
+                            result = xhr.responseText;
+                            result = JSON.parse(result);
+                        }else if(dataType === "xml"){
+                            result = xhr.responseXML;
+                        }
+                        callback(result);
+                    }
+                }
+            }
+        }
+        window.onload = function() {
+            var username = document.querySelector("#username");
+            var email = document.querySelector("#email");
+            var phone = document.querySelector("#uphone");
+            username.onblur = function() {
+                var usernameValue = username.value;
+                var type = "get";
+                var url = "checkUsername.php";
+                var params = "uname=" + usernameValue;
+                myAjax(type,url,params,function() {
+                    if(xhr.readyState === 4){
+                        if(xhr.status === 200) {
+                            var result = xhr.responseText;
+                            var username_result = document.getElementById("#username_result");
+                            if(result === "ok") {
+                                //对返回数据进行处理
+                                username_result.innerText ="用户名可以使用"
+                            }else {
+                                username_result.innerText ="用户名已存在"
+                            }
+                        }
+                    }
+                });
+            };
+            email.onblur = function(){
+                    var emailValue = email.value;
+                    var type = "post";
+                    var url = "checkEmail.php";
+                    var params = "e=" + emailValue;
+                    myAjax(type,url,params,function() {
+                        if(xhr.readyState === 4){
+                            if(xhr.status === 200) {
+                                var result = xhr.responseText;
+                                var email_result = document.getElementById("#email_result");
+                                if(result === 0) {
+                                    //对返回数据进行处理
+                                    email_result.innerText ="邮箱可以使用"
+                                }else {
+                                    email_result.innerText ="邮箱已存在"
+                                }
+                            }
+                        }
+                    });
+
+            };
+            phone.onblur = function(){
+                {
+                    var phoneValue = phone.value;
+                    //将usernameValue提交给服务器，用服务器进行唯一性的校验
+                    //四步骤：
+                    var xhr = null;
+                    if(window.XMLHttpRequest) {
+                        xhr = new XMLHttpRequest();
+                    }else {
+                        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    var param = "p="+ phoneValue;
+                    xhr.open("post","/checkPhone.php"+phoneValue,true);
+                    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                    xhr.send(param);
+                    xhr.onreadystatechange = function() {
+                        if(xhr.readyState === 4){
+                            if(xhr.status === 200) {
+                                var result = xhr.responseText;
+                                //将其转换为对象，方便取值
+                                result = JSON.parse(result);
+                                var phone_result = document.getElementById("#phone_result");
+                                if(result === 0) {
+                                    //对返回数据进行处理
+                                    phone_result.innerText ="手机可以使用"
+                                }else {
+                                    phone_result.innerText ="手机已存在"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>注册界面</h1>
+<form>
+    用户名：<input type="text" id = "username"><span id="username_result"></span><br />
+    邮箱：<input type="text" id="email"><span id="email_result"></span><br />
+    手机号：<input type="text" id = "phone"><span id = "phone_result"></span>
+</form>
+</body>
+</html>

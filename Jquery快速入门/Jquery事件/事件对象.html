@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <script src="../Jquery.js"></script>
+    <style>
+        #log {
+            width: 300px;
+            height: 300px;
+            background-color: #2e6da4;
+        }
+    </style>
+</head>
+<body>
+<div id="log">
+    <p>click me</p>
+</div>
+<a href="http://www.baidu.com">baidu</a>
+<script>
+    $(function() {
+        $("div").on("click",function(e) {
+            console.log($(e.currentTarget));//div指向事件的监听者 与this指向一样
+            console.log($(e.target));//p 指向事件的目标
+            console.log($(this).html());//打印div中内容
+            console.log($(e.delegateTarget));//div
+        });
+        $("#log").on("mouseover",function(e) {
+            console.log("pageX=" + e.pageX + "pageY=" + e.pageY);
+            console.log(e.type);
+        });
+        $("a").on("click",function(e) {
+            e.preventDefault();
+            alert("阻止默认跳转");
+        })
+    })
+</script>
+</body>
+</html>
+<!--
+
+   1. event.currentTarget
+   2. event.target
+   3. event.delegateTarget 绑定了当前事件的委托者
+   4. event.pageX 鼠标相对于文档左边缘的位置
+   5. event.pageY 鼠标相对于文档上边缘的位置
+   6. event.type 获取当前的事件类型
+   7. event.preventDefault() 阻止默认事件
+   8. event.stopPropagation() 阻止冒泡事件
+-->

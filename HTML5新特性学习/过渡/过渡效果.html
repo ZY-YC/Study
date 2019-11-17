@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>过渡</title>
+            <style>
+                div {
+                    width: 100px;
+                    height: 100px;
+                    background-color: lime;
+                    border: 1px solid #7e8c8d;
+                    transition: width 6s ,height 6s;
+                    -webkit-transition: width 6s ,height 6s;
+                }
+                /*在下面添加了什么属性，在上面必须有*/
+                div:hover {
+                    width: 400px;
+                    height: 4000px;
+                    transform: rotateY(20deg);
+                    -webkit-transform: rotateY(20deg);
+                }
+                /*.div1 {*/
+                /*!*指定3D效果*!*/
+                /*transform: rotateX(120deg);*/
+                /*-webkit-transform: rotateX(120deg);*/
+                /*}*/
+                /*.div1 {*/
+                    /*!*指定3D效果*!*/
+                    /*transform: rotateY(80deg);*/
+                    /*-webkit-transform: rotateY(80deg);*/
+                /*}*/
+            </style>
+        </head>
+<body>
+<div class="div1">Hello您观看</div>
+</body>
+</html>
+<!--
+     CSS3允许使用3D转换来对元素进行格式化
+
+
+
+     rotateX();
+     rotateY();
+
+-->
+<!--
+    通过CSS3,我们可以在不使用Flash动画或JS的情况下，当元素从一种样式变为另一种样式时为元素添加效果
+
+
+    规定您希望把效果添加到哪个CSS属性上
+    规定效果时长
+-->
+
+

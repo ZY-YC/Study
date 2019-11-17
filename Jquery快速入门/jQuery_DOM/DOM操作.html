@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../Jquery.js"></script>
+    <style>
+        .container {
+            border:1px solid #9F79EE;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="d1">-->
+    <!--<div class="d2">-->
+        <!--<p>hh</p>-->
+    <!--</div>-->
+<!--</div>-->
+<p>hh</p>
+<p>hh</p>
+<span>
+    我是span
+</span>
+</body>
+<script>
+    $(function() {
+        var set = {
+            top: 100,
+            right:60,
+        };
+        console.log($("p").offset(set));
+    })
+</script>
+<script>
+    //CDN(手机项目中比较方便) DOM 插入并包裹现有内容
+    $(function() {
+        // $("p").wrap("<div class='container'></div>");//为p标签添加一个外层div
+
+        // $("p").wrapAll("<div class='container'></div>");//为p标签包裹一个外层class=“container”的div
+        // $("p").unwrap();//class为d2的div标签被删除
+    })
+</script>
+<script>
+    //DOM 插入现有元素内
+    $(function() {
+        // $("p").append("<p>hehe</p>");//在p标签里追加p标签，标签内容为hehe
+        // $("p").append($("span"));
+        // $("<p>111</p>").appendTo($("p"));
+        // $("span").appendTo($("p"));
+        //console.log($("span").html());
+        // $("p").html("mm");
+        // $("span").text("hh");
+        // $("p").prepend("<div>emmmmmmm</div>");//插入在p标签前
+        // $("<div>emmmmmmm</div>").prependTo($("p"));//插入在p标签前
+    })
+</script>
+<script>
+    //DOM 插入移除替换
+    $(function() {
+        // $("p").detach();//括号里不写明确的指向的话，删除所有p标签
+        // $("<span>111</span>").replaceAll($("p"));
+    })
+</script>
+<script>
+    //DOM 插入到现有元素外
+    $(function() {
+        // $("span").clone().appendTo($("p"));
+        // $("p").after("<span>1111</span>");
+        // $("<span>1111</span>").insertAfter($("p"));
+    })
+</script>
+</html>
+
+<!--
+    1. class属性：
+       .addClass()
+       .hasClass()
+       .removeClass()
+       .toggleClass()
+    2. DOM 插入并包裹现有内容
+       .wrap();   在每个匹配的元素外层包上一个html元素
+       .unwrap();    将匹配元素集合的父级元素删除，保留自身（和兄弟元素，如果存在）在原来的位置
+       .wrapAll();     在所有匹配元素外面包一层HTML结构
+       .wrapInner();    在匹配元素里的内容包一层结构
+    3. DOM 插入现有元素内
+       .append() 在每个匹配元素里面的末尾处插入参数内容
+       .appendTo() 将匹配的元素插入到目标元素的最后面
+       .html()  获取集合中的第一个匹配元素的HTML内容 设置每一个匹配元素的html内容
+       .prepend() 将参数内容插入到每个匹配元素的前面
+       .prependTo() 将所有元素插入到目标前面
+       .text() 得到匹配元素集合中每个元素的合并文本，包括他们的后代设置匹配元素集合中每个元素的文本内容为指定文本内容
+    4. DOM 移除
+       .detach() 从DOM中去掉所有匹配的元素
+       .empty()  从DOM中移除集合中匹配元素的所有子节点
+       .remove() 将匹配元素集合从DOM中删除
+       .unwrap()
+    5. DOM 替换：
+       .replaceAll() 用集合的匹配元素替换每个目标元素
+       .replaceWith() 用提供的内容替换集合中所有匹配元素并且返回被删除元素的集合
+    6. 通用属性操作：
+       .add()
+       .prop()
+       .removeAttr()
+       .removeProp()
+       .val()
+    7. CSS 属性
+       .css() 获取元素集合中第一个元素的样式 设置......
+       .height() 接收参数number类型
+       .width()
+       .innerHeight()  加上padding后的宽高
+       .innerWidth()
+       .offset()  返回的是left和right的距离   获取坐标 不添加参数为获取坐标 添加参数为设置坐标
+       .outerHeight() 加上margin padding border的宽高
+       .outerWidth()
+       .position()  返回一个对象（内容是返回的相对于父元素的位置）
+       .scrollLeft() 获取滚动条已滚动的位置 设置滚动的距离
+       .scrollTop()
+    8. 复制元素
+        .clone()
+    9.DOM插入到现有元素外
+        .after() 在匹配元素集合中的每个元素后面插入参数所指定的内容，作为其兄弟节点
+        .before() 根据参数设定，在匹配元素的前面插入内容
+        .insertAfter() 在目标元素后面插入集合中每个匹配的元素（插入的元素是作为兄弟元素）
+        .insertBefore() 在目标元素前面插入集合中每个匹配的元素（插入元素作为目标元素的兄弟元素）
+
+-->

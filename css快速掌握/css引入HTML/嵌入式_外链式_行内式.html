@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css引入</title>
+</head>
+<!--外链式样式-->
+<link href="css/外链式样式.css" rel="stylesheet" type="text/css" />
+    <!--
+       rel属性是关系的意思，引入的页面与当前HTML页面是stylesheet关系
+       type定义文档类型，为css文件标签
+    -->
+
+
+
+<!--嵌入式样式-->
+<style type="text/css">
+    /*
+      如果使用的是html5的文档，type="text/css"可以不写。
+      当type的值为text/css时，内部编写的是css样式，
+      当type值为text/javascript时，内部编写的是javascript脚本
+    */
+    /*
+      style标签可以出现在html中的任何地方，但一般情况下，我们只会把它放在头部标签里head
+    */
+    /*
+      选择器{属性：值;}
+    */
+    p {
+      color:#7e8c8d;
+    }
+</style>
+<body>
+<!--行内式样式-->
+<div style="font-family:'宋体'">
+    <p style="color:#000000;">样式为：颜色#7e8c8d，字体为宋体，文字大小为20px</p>
+    <p>Hello World!!!!!! I am the best</p>
+</div>
+</body>
+</html>

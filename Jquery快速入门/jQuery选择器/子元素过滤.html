@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子元素过滤</title>
+    <script src="../Jquery.js"></script>
+    <style>
+        .a {
+            background-color: lime;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>s1</span>
+    <span>s1</span>
+    <span>s1</span>
+</div>
+<div>
+    <span>s1</span>
+    <span>s1</span>
+    <span>s1</span>
+</div>
+<div>
+    <span>s1</span>
+    <span>s1</span>
+    <span>s1</span>
+</div>
+<script>
+    $(function() {
+        $("div span:first-child").css("color","red").hover(function(){
+            $(this).addClass("a");
+        },function() {
+            $(this).removeClass("a");
+        });
+        $("div span:last-child").css("color","yellow").hover(function() {
+            $(this).addClass("a");
+        });
+        $("div span:first-of-type").css("color","blue");
+    })
+</script>
+</body>
+</html>
+<!--
+    1. :first-child Selector 选择所有父级元素下的第一个子级元素
+       $(":first-child")
+    2. :last-child Selector 选择父元素下的最后一个子元素
+       $(":last-child")
+    3. :first-of-type Selector 选择所有相同的元素名称的第一个兄弟元素
+       $(":first-of-type")
+    4. :last-of-type Selector 选择所有相同的元素名称的最后一个兄弟元素
+       $(":last-of-type")
+    5. :nth-child Selector 选择父元素的第n个子元素
+       $(":nth-child(index/even/odd/equation)")
+-->

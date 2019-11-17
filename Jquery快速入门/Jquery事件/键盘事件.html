@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <script src = "../Jquery.js"></script>
+</head>
+<body>
+
+<script>
+ $(document).keydown(function(event){
+     alert("keydown");
+ });
+ $(document).keypress(function(event){
+     alert("keypress");
+ });
+ $(document).keyup(function(event){
+     alert("keyup");
+ })
+</script>
+</body>
+</html>
+<!--
+
+   1. .keydown()
+   2. .keypress() 敲击键盘时触发
+   3. .keyup() 按键释放时被触发
+
+
+   常用键盘按键对应代码
+     Backspace   8
+     Tab         9
+     Clear       12
+     Enter       13
+     Shift       16
+     Control     17
+     Alt         18
+     Caps Lock   20
+     Esc         27
+     空格键       32
+
+
+-->

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承性</title>
+    <style>
+        /*
+             在实际工作中，我们往往会给body标签设置字体大小以及字体颜色
+          因为body标签是最外层的标签，内层会继承外层样式
+        */
+        /*
+          外层元素生上的样式会被内层元素所继承
+          当外层元素=内层元素时，外层元素会被内层元素所覆盖
+        */
+        body {
+            color: blueviolet;
+        }
+        p {
+            color:red;
+        }
+        div {
+            /*
+              并不是所有的样式都能够被继承
+              只有文本与字体样式属性以外其他都不可以，
+            */
+            border: 1px solid #ccc;/*没有被继承*/
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h4>HELLO WORLD</h4>
+    <p>你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+    </p>
+</div>
+</body>
+</html>

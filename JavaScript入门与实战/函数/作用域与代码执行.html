@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域与js代码的运行</title>
+</head>
+<body>
+
+</body>
+<script>
+   var a = 12;
+   function f() {
+       alert(a);
+       // var a = 10;
+   }
+   f();//undefined
+</script>
+</html>
+<!--
+   作用域：变量可以起作用的范围和区域。
+     全局变量，局部变量。
+
+     js代码分为两个阶段
+       解析和编译 运行
+       1.解析（编译）阶段：语法检查，变量及函数进行声明
+       2.运行阶段：变量的赋值，代码流程的执行
+
+       变量提升;在代码执行前，已经在编译阶段被声明了
+-->

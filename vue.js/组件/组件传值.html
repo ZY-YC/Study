@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件传值</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/bootstrap-3.3.7/dist/css/bootstrap.css" />
+
+</head>
+<body>
+<div id="app">
+    <com1 v-bind:parentmsg="msg"></com1>
+</div>
+<script>
+    var v =new Vue({
+        el:'#app',
+        data:{
+            msg:'123 父组件中的数据'
+        },
+        methods:{
+
+        },
+        components:{
+            com1:{
+                props:["parentmsg"],
+                template:'<h1>这是子组件{{parentmsg}}</h1>'
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../Jquery.js"></script>
+    <style>
+        .outter {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        .inner {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="outter">
+    <div class="inner"></div>
+</div>
+<script>
+    $(function() {
+        $(".outter .inner:hidden").css("display","block");
+        $(".outter .inner:visible").css("display","none");
+
+    })
+</script>
+</body>
+</html>
+<!--
+   jQuery扩展：之前学习过的选择器
+
+   可见性过滤：
+
+      1.$(":hidden") 选择所有隐藏元素
+
+           元素可被隐藏的几种情况：
+              （1）他们的css display值是none
+              （2）他们是type = “hidden”的表单元素
+              （3）他们的宽度和高度都设为0；
+              （4）一个祖先元素是隐藏的，因此该元素是不会在页面上显示的
+      2.$(":visible") 选择所有可见元素
+
+
+           如果元素占据文档一定的空间，元素被认为是可见的。可见元素的宽度或高度是大于0的。
+         所以：元素的visibly:hidden 或 opacity : 0 都被认为是可见的，因为他们仍然占
+         据空间布局。
+           不在文档中的元素是被认为隐藏的；Jquery没有办法知道他们是否是可见的，因为元素
+         可见性依赖与适用的样式。
+           隐藏元素上做动画，元素被认为是可见的，直到动画结束。显示元素上做动画，在元素的
+         开始出该元素被认为是可见的
+
+-->

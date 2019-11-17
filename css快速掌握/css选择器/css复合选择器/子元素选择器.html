@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子元素选择器</title>
+    <style type="text/css">
+        /*<!--匹配.box下h2 ,只能匹配一级（匹配他的儿子）-->*/
+        .box>h2{
+            color:#f00;
+            text-decoration: overline;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>HTML</h2>   <!--第一个儿子-->
+    <div><!--第二个儿子-->
+        <h2>CSS</h2><!--第二个儿子又生了一个小孩 孙子-->
+    </div>
+    <h2>php</h2><!--第三个儿子-->
+    <!--都是class后代，因此都会改变-->
+</div>
+</body>
+</html>

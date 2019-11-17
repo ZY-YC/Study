@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>塌陷现象</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        .div1 {
+            background-color: #f00;
+            margin-bottom: 20px;
+        }
+        .div2 {
+            background-color: blue;
+            margin-top: 40px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+</body>
+</html>
+<!--
+  竖直方向上的margin值不会叠加 它会取较大的值
+  横着的方向是没有塌陷现象的
+  浮动元素它是没有margin的塌陷现象的
+-->

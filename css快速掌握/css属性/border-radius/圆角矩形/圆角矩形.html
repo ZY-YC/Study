@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆角矩形border-radius</title>
+    <style>
+        div {
+            width:  100px;
+            height: 100px;
+            border: 1px solid #f00;
+        }
+        div:nth-child(1) {
+            border-radius: 10px 20px 30px 40px;
+        }
+        div:nth-child(2) {
+            border-radius: 20px;
+        }
+        div:nth-child(3) {
+            border-radius: 20px 0  0 20px;
+        }
+        div:nth-child(4) {
+            border-radius: 20px 20px 0 0;
+        }
+        div:nth-child(5) {
+            border-radius: 50%;
+        }
+        div:nth-child(6) {
+            border-radius: 50px;
+        }
+        div:nth-child(7) {
+            width: 100px;
+            height: 50px;
+            border-radius: 25px;/*实现椭圆，设置圆角矩形的值为高度的一半*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>
+<!--
+
+-->

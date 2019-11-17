@@ -1,0 +1,34 @@
+* {
+    /*此为通用选择器*/
+    /*
+      不介意使用，会给大型网站带来负担，且IE6不支持
+    */
+    background-color: lightskyblue;
+}
+
+p {
+    /*此为样式选择器*/
+    background-color: #7e8c8d;
+    font-size:20px;
+    color:#000000;
+    font-family: "楷体";
+}
+
+#id {
+    /*此为id选择器*/
+    /*
+        要注意id的属性值必须是唯一的
+    */
+    background-color: #7e8c8d;
+    font-size:20px;
+    color:#000000;
+    font-family: "楷体";
+}
+
+.class {
+    /*此为类选择器*/
+    background-color: #7e8c8d;
+    font-size:20px;
+    color:#000000;
+    font-family: "楷体";
+}

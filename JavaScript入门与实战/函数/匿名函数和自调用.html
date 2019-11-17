@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匿名函数和自调用</title>
+</head>
+<body>
+
+</body>
+<script>
+    //匿名函数：函数本身是没有名字的
+    var fun = function() {
+        console.log(123);
+    };
+    //变量的名字是fun，函数本身是没有名字的
+    fun();
+    (function() {
+      console.log(123);
+    })()
+    //立即执行函数（自调用匿名函数）：(function(){}) ()
+     //作用域：防止全局变量的污染，封装一个局部作用
+
+</script>
+</html>

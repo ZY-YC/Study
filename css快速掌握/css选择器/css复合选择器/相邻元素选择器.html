@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相邻元素选择器</title>
+    <style type="text/css">
+        /*
+            E + F
+           要满足以下前提才会匹配：
+             1.元素必须是兄弟关系，平辈
+             2.元素必须要紧挨着，之间没有任何元素阻挡。
+             3.要求F元素一定要在E元素下面
+        */
+        h2 + h3{
+            color:#f00;
+            text-decoration: overline;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>HTML</h2>   <!--第一个儿子-->
+    <h3>php</h3>
+    <div><!--第二个儿子-->
+        <h2>CSS</h2><!--第二个儿子又生了一个小孩 孙子-->
+    </div>
+    <!--<h2>php</h2>&lt;!&ndash;第三个儿子&ndash;&gt;-->
+    <!--都是class后代，因此都会改变-->
+</div>
+</body>
+</html>

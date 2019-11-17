@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后代元素选择器</title>
+    <style type="text/css">
+        .box h2{
+            color:#f00;
+            text-decoration: overline;
+        }
+    </style>
+</head>
+<body>
+<!--
+   class中有三个子元素
+   1.<h2></h2>
+   2.<div></div>
+   3.<h2></h2>
+   第二个里面还有一个子元素<h2></h2>
+-->
+<div class="box">
+    <h2>HTML</h2>   <!--第一个儿子-->
+    <div><!--第二个儿子-->
+        <h2>CSS</h2><!--第二个儿子又生了一个小孩-->
+    </div>
+    <h2>php</h2><!--第三个儿子-->
+    <!--都是class后代，因此都会改变-->
+</div>
+</body>
+</html>

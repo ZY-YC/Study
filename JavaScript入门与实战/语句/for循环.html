@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环</title>
+</head>
+<body>
+<script>
+    var i;
+    var s = '';
+    var m = '';
+var l = '';
+    for(i = 1; i < 10; i++) {
+        console.log(i);
+    }
+    for(var a = 0; a < 10; a++) {
+        for (var b = 0; b < 10; b++) {
+            s += "*";
+        }
+        s+='\n';
+    }
+    console.log(s);
+    for(var c = 0; c < 10; c++) {
+        for (var d = 0; d < 10-c; d++) {
+            m += "*";
+        }
+        m+='\n';
+    }
+    console.log(m);
+    for(var j = 1; j < 10; j++) {
+        for (var k = j; k < 10; k++) {
+             l += j +"*" + k + " = " + (j*k) + "\t";
+        }
+       l+="\n";
+    }
+    console.log(l);
+</script>
+</body>
+</html>
+<!--
+
+-->

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天气信息查询</title>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript" src="template.js"></script>
+    <script type="text/html" id="weatherTemplate">
+        {{each weather as value i}}
+        <div>
+            <span>{{value.date}}</span>
+            <ul>
+                <li>白天天气:{{value.info.day[1]}}</li>
+                <li>白天温度:{{value.info.day[2]}}</li>
+                <li>白天风向:{{value.info.day[3]}}</li>
+                <li>白天风速:{{value.info.day[4]}}</li>
+            </ul>
+            <ul>
+                <li>夜间天气:{{value.info.night[1]}}</li>
+                <li>夜间温度:{{value.info.night[2]}}</li>
+                <li>夜间风向:{{value.info.night[3]}}</li>
+                <li>夜间风速:{{value.info.night[4]}}</li>
+            </ul>
+            {{if value.info.dawn}}
+            <ul>
+                <li>黎明天气:{{value.info.dawn[1]}}</li>
+                <li>黎明温度:{{value.info.dawn[2]}}</li>
+                <li>黎明风向:{{value.info.dawn[3]}}</li>
+                <li>黎明风速:{{value.info.dawn[4]}}</li>
+            </ul>
+            {{/if}}
+        </div>
+        {{/each}}
+    </script>
+    <script>
+        $(function() {
+            $("#query").click(function(){
+                var code = $("#city").val();
+                console.log(code);
+                $.ajax({
+                    url:"http://cdn.weather.hao.360.cn/api_weather_info.php",
+                    data:{
+                        app:"hao360",
+                        code:code,
+                    },
+                    jsonp: "_jsonp",
+                    dataType:"jsonp",
+                    success:function(data) {
+                        console.log(data);
+                        var html = template("weatherTemplate",data);
+                        $("#info").html(html);
+                    }
+                })
+            })
+        })
+    </script>
+    <style>
+        #container {
+            width: 400px;
+            min-height: 300px;
+            background-color: bisque;
+            margin: auto;
+            padding:10px;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+ <div id = "container">
+     <select id="city">
+         <option value="101010100">北京1</option>
+         <option value="101020100">北京2</option>
+         <option value="101280101">北京3</option>
+         <option value="101280601">北京4</option>
+     </select>
+     <input type="button" value="查询" id = "query">
+     <div id = "info"></div>
+ </div>
+</body>
+</html>

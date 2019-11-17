@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM属性</title>
+    <script src="../Jquery.js"></script>
+    <style>
+        .p {
+            color:red
+        }
+    </style>
+</head>
+<body>
+<!--<p>hh</p>-->
+<a>hh</a>
+<p name="hh">emmmm</p>
+<div class="a"></div>
+<input type="checkbox" value="xuan">
+<script>
+    $(function() {
+        // $("p").addClass("p");
+        // $("a").attr("href","http://www.baidu.com");
+        // var name=$("p").attr("name");
+        // $("div").text(name);
+        // if($("div").hasClass("a")){
+        //     alert("true");
+        // }
+        console.log($("a").html());
+        console.log($("input").prop("value"));
+    })
+</script>
+</body>
+</html>
+<!--
+    1. .addClass(className) 为每个匹配的元素添加指定的样式类名
+    2. .attr(attributeName) 获取匹配元素集合中第一个元素属性的值 设置匹配元素的一个或多个属性
+    3. .hasClass(className) 确定任何一个匹配元素是否被分配到给定的样式
+    4. .html() 获取集合中第一个匹配元素的HTML内容 设置每一个匹配元素的HTML内容
+    5. .prop(properName) 获取元素集合中的第一个元素的属性值为匹配元素设置一个或多个属性
+    6. .removeAttr(attributeName) 为匹配元素集合中的每个元素移除一个属性
+    7. .removeProp(propertyName) 为集合中匹配的元素删除一个属性
+    8. .removeClass([className]) 移除集合中每个匹配上一个 多个或全部样式
+    9. .toggleClass() 在匹配的元素集合中的每个元素添加或删除一个或多个样式类，取决于这个样式类是否存在或值切换属性
+   10. .val() 获取匹配元素集合中第一个元素的当前值 设置匹配元素集合中每个元素的值
+       主要用于获取表单元素的值
+
+-->

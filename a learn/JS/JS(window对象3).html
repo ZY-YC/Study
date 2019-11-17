@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*  //setTimeout("alert('hello')"4000);
+    var fnCall = function () {
+        alert("world");
+    }
+    var timeout1=setTimeout(function(){
+        alert("hello");
+    },2000)
+    //setTimeout(fnCall,5000);*/
+  var num = 1,
+  max = 10,
+      timer = null;
+  timer = setInterval(function () {
+      num++;
+      if(num>max){
+          clearInterval(timer);
+      }
+      console.log(num);
+  },1000)
+</script>
+</body>
+</html>

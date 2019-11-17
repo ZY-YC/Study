@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础选择器</title>
+    <script src="../Jquery.js"></script>
+</head>
+<body>
+   <div>
+       <span class = "s"></span>
+       <p id = "id"></p>
+       <label ></label>
+   </div>
+<script>
+    $(function(){
+        $("div *").html("Hello");
+        $(".s").html("World");
+        $("#id").html("WY");
+        $("label").html("JJ");
+        $("span,p,label").html("We are family");
+    })
+</script>
+</body>
+</html>
+<!--
+   1.All selector("*")
+     选择所有元素 $("*")
+   2.Class selector(".class")
+     选择给定样式类名的所有元素 $(".class")
+   3.Element selector("element")
+     根据给定的（HTML）标记名称选择所有的元素$("element")
+   4.Id selector("id")
+     选择一个具有给定id属性的单个元素$("#id")
+   5.Multiple selector("selector1,selector2,selectorN");
+     将每一个选择器匹配到的元素合并后一起返回$(selector1,selector2,selectorN)
+-->

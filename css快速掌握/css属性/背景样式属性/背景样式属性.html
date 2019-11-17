@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景样式属性</title>
+    <style>
+        .box {
+            height: 60px;
+            width: 60px;
+           background-color: green;
+           /*background-position: center ;*/
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+<!--
+   background: color image repeat position attachment
+   color:用于给背景设置颜色，但需要有内容或宽度和高度才可以显示出来，
+   image：给元素设置背景图片，图片要放置在url中
+   repeat：平铺，背景图片是否平铺 repeat平铺 repeat-x水平平铺 repeat-y垂直平铺 no-repeat不平铺
+   position：用于设置背景图片的位置,涉及到水平位置left right center垂直位置 top bottom center
+       position :left bottom; position:center center;格式
+       固定值 position：100px 100px；geshi
+       百分比 position: 50% 50%; == center center;
+   attachment:设置成fixed背景图片不随滚动条的滑动而变化
+-->

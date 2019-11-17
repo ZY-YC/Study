@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+    <style type="text/css">
+        a:link,a:visited {
+            color: #f00;
+            text-decoration: none;
+        }
+        a:hover {
+            color: gold;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<!--
+   一般情况下，通常会去掉超级链接的下划线，然后同时会给超级链接一个颜色
+   一般：
+       正常状态与访问过后的状态的样式设置一样
+       当鼠标放上的时候给其他设置另外一个颜色 激活状态一般不设置颜色 因为激活状态时间太短
+
+-->
+<body>
+<a href="#">百度链接</a>
+<a href="http://www.133.com">133</a>
+<a href="http://www.1313.com">1313</a>
+<a href="http://www.13.com">13</a>
+<a href="http://www.11.com">11</a>
+<a href="http://www.baidu.com">百度链接</a>
+</body>
+</html>

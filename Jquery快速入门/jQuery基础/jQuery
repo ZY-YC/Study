@@ -1,0 +1,13 @@
+jQuery
+
+   一个优秀的Jquery库，是轻量级的库。
+   jQuery使用户能更方便的处理HTML，events，实现动画效果，并且方便的为网站提供Ajax交互
+   优势：它的文档很全，而且各种应用说明也很详细，同时有许多成熟的插件可供选择。
+   核心理念：write less,do more
+
+
+   jQuery语法：
+      基础语法： $(selector).action()
+          （1）美元符号$定义jQuery
+          （2）选择器符（selector）"查询"和"查找"HTML元素
+          （3）jQuery的action()执行对元素的操作

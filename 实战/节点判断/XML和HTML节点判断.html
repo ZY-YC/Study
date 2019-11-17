@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>isXML</title>
+</head>
+<body>
+<script>
+    //属性法
+    // var isXML = function(document) {
+    //     return (!!document.xmlVersion) || (!!document.xml) ||
+    //         (toString.call(document) === '[object XMLDocument]') ||
+    //         (document.nodeType === 9 && document.documentElement.nodeName !== 'HTML');
+    // };
+    // var isXML = window.HTMLDocument ? function(doc) {
+    //     return !(doc instanceof HTMLDocument);
+    // } : function(doc) {
+    //     return "selectNodes" in doc;
+    // }
+    //目前为止相对最严谨的
+    //功能法
+    var isXML = function(doc) {
+        return doc.createElement("p").nodeName !== doc.createElement("p").nodeName;
+    };
+    console.log(isXML(document));
+</script>
+</body>
+</html>

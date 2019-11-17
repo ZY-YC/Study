@@ -1,0 +1,26 @@
+Ajax 只能访问自己同源服务器的数据，不能访问别人服务器的数据
+而跨域就是访问别人服务器的使用
+
+(1)js文件借用Script的src属性完成访问别人的服务器
+(2)php文件借用Script的src属性完成访问别人的服务器
+
+动态创建script标签 动态指定src的值
+   var script = document.creatElement("script");
+   script.src = "url?参数="+参数;
+
+   var head = document.querySelector("head");
+   head.appendChild(script);
+
+动态指定回调函数名称
+   var script = document.creatElement("script");
+   script.src = "url?参数="+参数 +"&callback=回调函数自定义名称";
+   window["回调函数名称"] = function(data){回调函数方法内容}
+
+.php
+  $callName = $_GET["callback"];
+  $city = $_GET["city"];
+
+
+完善myAjax方法达到能获取同源数据和非同源数据
+  当dataType:"json/text/xml" 以AJAX的方式获取同源数据
+  当dataType:"jsonp"以动态建立script的方式获取非同源数据

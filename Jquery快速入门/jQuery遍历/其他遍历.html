@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他遍历</title>
+    <script src="../Jquery.js"></script>
+</head>
+<body>
+<!--<div></div>-->
+<!--<div></div>-->
+<!--<div></div>-->
+<!--<div></div>-->
+<!--<div></div>-->
+<!--<p>addadd</p>-->
+<!--<p>Hello<a href="#">John</a>,How are you doing</p>-->
+
+<ul>
+    <li class="foo">li 11</li>
+    <li>li 12</li>
+    <li class = "bar">li 13</li>
+</ul>
+</body>
+<script>
+    $(function() {
+
+        // $("div").add("p").css("color","red");
+        // $("div").css("border","1px solid #00f").add("p").css("color","red")
+        $("p").contents().filter(function() {
+            return this.nodeType != 1;
+        }).wrap("<b/>");
+        $("ul").find(".foo").css("background-color","red").end().find(".bar").css("color","red");
+    })
+</script>
+</html>
+<!--
+
+    1. .add():添加元素到匹配的元素集合。
+    2. .contents(): 不接受任何的参数 获得匹配元素集合中的子元素，包括文字和注释节点
+    3. .end():终止在当前链的最新过滤操作，并返回匹配的元素的以前状态
+
+
+-->

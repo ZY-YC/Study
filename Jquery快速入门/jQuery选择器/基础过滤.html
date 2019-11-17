@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础过滤</title>
+    <script src = "../Jquery.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            border: 1px solid #ffffff;
+            margin: 0 5px;
+            float:left;
+        }
+        .colored {
+            background-color: #00ff00;
+        }
+        .focused {
+            background-color: #9F79EE;
+        }
+    </style>
+</head>
+<body>
+<button id = "2">2</button>
+<div></div>
+<div id="id"></div>
+<div></div>
+
+<div id="content">
+    <input tabindex="1">
+    <input tabindex="2">
+    <select tabindex="3">
+    <option>
+           select menu
+    </option>
+        <div tabindex = "4">
+            a div
+        </div>
+    </select>
+</div>
+
+
+<table border="1">
+    <tr>
+       <td>TD #0</td>
+       <td>TD #1</td>
+       <td>TD #2</td>
+    </tr>
+    <tr>
+        <td>TD #3</td>
+        <td>TD #4</td>
+        <td>TD #5</td>
+    </tr>
+    <tr>
+        <td>TD #6</td>
+        <td>TD #7</td>
+        <td>TD #8</td>
+    </tr>
+</table>
+
+<script>
+    $(function(){
+        $("#2").click(function() {
+            $("div:animated").toggleClass("colored");
+        });
+        function animatedIt() {
+           $("#id").slideToggle("slow",animatedIt);
+        }
+        animatedIt();
+        $("#content").delegate("*","focus blur",function(event){
+            var e = $(this);
+            setTimeout(function() {
+                e.toggleClass("focused",e.is(":focus"));
+            },0)
+        });
+        $("td:lt(4)").css("color","red");
+    })
+</script>
+</body>
+</html>
+
+
+
+<!--
+     1. :animated Selector 选择所有正在执行动画效果的元素
+        $(":animated")
+     2. :eq() Select 在匹配的集合元素中选择索引值为index的元素
+        $(":eq(index)")：index：要匹配的元素的索引值（从0开始计）
+        $(":eq(-index)"):-index:要匹配的元素的索引值，从最后一个元素开始倒计数
+     3. :even Selector 选择索引值为偶数的元素，从0开始。也可以查看odd
+        $(":even")
+     4. :first Selector 选择第一个匹配到的元素
+        $(":first")
+     5. :focus Selector 选择当前获取焦点元素
+        $(":focus")
+     6. :header Selector 选择所有标题元素h1 h2 h3...
+        $(":header")
+     7. :last Selector 选择最后一个匹配的元素
+        $(":last")
+     8. :gt() Selector 选择匹配集合中所有大于给定index(索引值)的元素
+        $("gt(index)") 或 $(":gt(-index)")
+     9. :lt Selector 选择匹配集中所有索引值小于给定index参数的元素。
+        $(":lt(index)") 或 $(":lt(-index)")
+     10. :not() Selector 选择所有元素去除不匹配给定的选择器的元素
+        $(":not(selector)")
+
+-->

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css优先级!important</title>
+    <style>
+
+        div {
+            color:red !important;
+            /*1*/
+        }
+        /*类选择器的优先级大于元素选择器（无关就近原则）*/
+        .d {
+            color: #00ff00;
+            /*10*/
+        }
+        /*
+         id选择器的优先级大于类选择器
+        */
+        #dd {
+            color: antiquewhite;
+            /*100*/
+        }
+    </style>
+</head>
+<body>
+<!--行内元素大于id选择器-->
+<div class = 'd' id = 'dd' style="color: blue;">
+    <h4>HELLO WORLD</h4>
+    <p>你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+        你好 HELLO WORLD<br />
+    </p>
+</div>
+</body>
+</html>
+<!--
+  总结：
+     !important的权值最大 无穷大
+     一般而言，选择其指向的越准确，优先级越高
+     通常
+        标签选择器   1
+        类选择器    10
+        id选择器   100
+        行内样式   1000
+        值越大表示优先级越高
+        不管是单个选择器还是多个选择器组合，他们的优先级都可以处采用上面的公式来表示
+        权越大，优先级越高
+-->
+<!--
+  使用!important要注意
+   1.！important他是提升的属性的权值，而不是提升选择器的权值
+   2.！important不能提升继承过来的权值
+-->

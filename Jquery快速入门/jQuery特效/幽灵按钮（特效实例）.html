@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>幽灵按钮</title>
+    <script src="../Jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #333;
+        }
+        a {
+            text-decoration: none;
+        }
+        .box {
+            width: 1000px;
+            height: 220px;
+            margin: 50px auto;
+        }
+        .box .link {
+            float:left;
+            margin: 0 20px;
+            width: 205px;
+            height: 280px;
+            position:relative;
+        }
+        .link-miss .icon{
+            background-image: url("#");
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .link-play .icon{
+            background-image: url("#");
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .link-touch .icon{
+            background-image: url("#");
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .box .link .icon {
+            display:inline-block;
+            width: 100%;
+            height: 190px;
+            transition: 0.2s linear;
+            -webkit-transition: 0.2s linear;
+
+        }
+        .box .link :hover {
+            transform: rotate(360deg) scale(1.2);;
+            -webkit-transform: rotate(360deg) scale(1.2);;
+
+        }
+        .box .link .button {
+            width: 180px;
+            height: 50px;
+            border:2px solid rgba(255,255,255,0.8);
+            display:block;
+            line-height: 50px;
+            text-align: center;
+            color:#2dcb70;
+            font-size: 18px;
+            font-weight: 700;
+            box-sizing: border-box;
+            /*防止由于padding而致使的字体超出盒子box的问题*/
+            margin: auto;
+            /*transition: 0.4s ease;*/
+            /*-webkit-transition: 0.4s ease;*/
+            position: relative;
+        }
+        .box .link .button:hover {
+            background-position: 140px;
+            border-color:rgba(255,255,255,1);
+        }
+        .box .link .button .line {
+            display:block;
+            width: 0;
+            height: 2px;
+            background: none;
+            position: absolute;
+            left:-100%;
+            top:-2px;
+            transition: 0.4s ease;
+            -webkit-transition: 0.4s ease;
+        }
+        .box .link .button .line-top {
+            left:-100%;
+            top:-2px;
+            width: 0;
+            height: 2px;
+
+        }
+        .box .link .button:hover .line-top {
+            width: 180px;
+            height: 2px;
+            background-color: #fff;
+            position:absolute;
+            left:-2px;
+            top:-2px;
+        }
+        .box .link .button .line-left {
+              bottom:-100%;
+              top:-2px;
+              width: 2px;
+              height: 0;
+
+          }
+        .box .link .button:hover .line-left {
+            height: 50px;
+            background-color: #fff;
+            left:-2px;
+            bottom:-2px;
+        }
+        .box .tooltip {
+            position: absolute;
+            padding:0 15px;
+            height: 35px;
+            border-radius: 5px;
+            background-color: #2dcb70;
+            margin: 0 auto;
+            color:#fff;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 35px;
+            opacity: 0;
+        }
+        .box .tooltip span {
+            position:absolute ;
+            width: 0;
+            height: 0;
+            border:8px solid transparent;
+            border-top-color:#2dcb70;
+            left:50%;
+        }
+    </style>
+
+    <script>
+       $(function() {
+           $(".button").hover(function () {
+               var title = $(this).attr("data-text");
+               $(".tooltip em").text(title);
+               var LetLoc = $(this).offset().left;
+               var addleft = ($(".tooltip").outerWidth()-$(this).outerWidth())/2;
+               $(".tooltip").css({
+                     left:LetLoc-addleft,
+                     top:140,
+               }).animate({
+                   top:195,
+                   opacity:1
+               },300)
+           },function() {
+
+           })
+       })
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="link link-miss" >
+        <span class="icon"></span>
+        <a href="#" class="button" data-text="My miss is clear">
+            <span class="line line-top"></span>
+            <span class="line line-left"></span>
+            <span class="line line-right"></span>
+            <span class="line line-bottom"></span>
+            MISSION
+        </a>
+    </div>
+    <div class="link link-play" >
+        <span class="icon"></span>
+        <a href="#" class="button" data-text="this is my playground">
+            <span class="line line-top"></span>
+            <span class="line line-left"></span>
+            <span class="line line-right"></span>
+            <span class="line line-bottom"></span>
+            PLAY
+        </a>
+    </div>
+    <div class="link link-touch" >
+        <span class="icon"></span>
+        <a href="#" class="button" data-text="Lets do something together">
+            <span class="line line-top"></span>
+            <span class="line line-left"></span>
+            <span class="line line-right"></span>
+            <span class="line line-bottom"></span>
+            TOUCH
+        </a>
+    </div>
+    <div class="tooltip">
+        <em></em>
+        <span></span>
+    </div>
+</div>
+</body>
+</html>

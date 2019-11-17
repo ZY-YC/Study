@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css选择器的优先级</title>
+    <!--行内样式优先于内部样式优先于外部样式
+     链入外部样式表与内部样式表之间的优先级取决于所处位置的先后
+    最后定义的优先级最高（就近原则）-->
+    <style>
+       /*div{color=red;}
+       #idgreen{color:green;}
+       .classyellow{color:yellow;}
+       .classblue{color:blue;}
+       div{color:gray;} */
+       *{color:black;}/*通配符选择器0*/
+        p b{color:purple;}/*权值=2*/
+        b{color:yellow; !important;}/*权值=1*/
+        .classblue{color:blue;}/*权值=10*/
+        #text1 p b{color:orange;}/*102*/
+        div p .classblue{color:red;}/*12*/
+        div #text2 b{color:gray;}/*102*/
+    </style>
+</head>
+<body>
+     <p>派生选择器的优先级</p>
+     <div id="text1">
+         <h1>css样式优先级</h1>
+         <p id="text2">所谓<b class="classblue" style="color:pink;">css优先级</b>，指css样式在浏览器中被解析的先后顺序</p>
+         <div><b>权值相同</b>，就近原则；<b>权值不同</b>，哪个权值高，使用哪个。</div>
+     </div>
+   <!-- <p>单独使用</p>
+    <div>使用标签选择器样式</div>
+    <div id="idgreen">使用ID样式"绿色"</div>
+    <div class="classblue">使用Class样式</div>
+<!--id选择器优先于标签选择器;class选择器优先于标签选择器-->
+   <!-- <p>同一个元素引用标签，id,class定义样式</p>
+    <div id="idgreen" class="classblue">css优先级，同时引用标签，id,class定义样式</div>
+    <div class="classblue" id="idgreen">css优先级，同时引用标签，id,class定义样式</div>
+<!--优先级结果：id选择器>class选择器>标签选择器-->
+  <!--  <p>同一个元素引用多个class定义样式</p>
+    <div class="classblue classyellow">css优先级</div>
+    <div class="classyellow classblue">css优先级</div>
+    <p>同一个元素引用多个标签内容</p>
+    <div>css优先级</div>
+<!--优先级结果：同类样式多次引用，样式表中后定义的优先级高（就近原则）-->
+</body>
+</html>

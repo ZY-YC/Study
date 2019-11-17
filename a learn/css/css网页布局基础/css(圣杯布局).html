@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .header{min-width: 700px;}
+        .footer{
+            float:left;
+            width:100px;
+            background: #ddd;
+            height: 40px;
+            text-align: center ;
+        }
+        .contatiner{
+            padding: 0 220px 0 200px;
+        }
+        .left,
+        .right,
+        .middle{
+            position: relative;
+            float: left;
+            min-height: 300px;
+        }
+        .middle{
+            width: 100%;
+            background: #1a5acd ;
+        }
+        .left{
+            width: 200px;
+            background: #f00;
+            margin-left: -100%;
+            left:-200px;
+        }
+        .right{
+            width: 220px;
+            background: #30a457 ;
+            margin-left:-220px;
+            right: -220px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h4>header</h4>
+    </div>
+<div class="contatiner ">
+    <div class="middle">
+        <h4>middle</h4>
+        <p>中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间
+            内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内
+            容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容</p>
+    </div>
+    <div class="left">
+        <h4>left</h4>
+        <p>左侧内容</p>
+    </div>
+    <div class="right">
+        <h4>right</h4>
+        <p>右侧内容</p>
+    </div>
+    <div class="footer ">
+        <h4>footer</h4>
+    </div>
+</div>
+</body>
+</html>

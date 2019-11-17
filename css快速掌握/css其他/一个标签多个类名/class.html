@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一个标签多个样式</title>
+    <style>
+        /*
+          先给class=div1的元素内容设为加粗效果
+          div2 颜色 红色
+          div3 加粗 颜色红色
+        */
+        .div1 {
+            font-weight: bold;
+        }
+        .div2 {
+            color:red;
+        }
+        /*.div3 {*/
+            /*color:red;*/
+            /*font-weight: bold;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="div1">黑马程序员</div>
+    <div class="div2">黑马程序员</div>
+    <div class="div1 div2">黑马程序员</div>
+</body>
+</html>
+<!--
+   多个类名的优点：
+      1.减少css代码量
+      2.多个类名样式会叠加在当前元素上
+
+   要注意：一个标签内有多个类名。他们设置到样式一样的话，就会出现冲突
+      若冲突，谁写在下面，谁起作用
+-->

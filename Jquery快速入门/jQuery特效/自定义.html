@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义特效</title>
+     <script src="../Jquery.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #9F79EE;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<button>停止动画</button>
+<script>
+// $(function() {
+//     $("div").click(function() {
+//         $(this).animate({
+//             opacity:0.2,width:400,left:100
+//         },"2000","linear",function() {
+//             alert("动画执行完毕");
+//         });
+//         $("div").animate({
+//             opacity:0.5,width:400,left:8
+//         },"2000","swing",function() {
+//             alert("动画执行完毕");
+//         })
+//     })
+// })
+</script>
+<script>
+    $(function() {
+        $("div").click(function() {
+            $(this).animate({
+                width:"50px",
+                opacity:0.5,
+                left:100
+            },3000,"linear").delay(5000);
+            $(this).animate({
+                width:200,
+                opacity:1,
+                left:8
+            },"2000","swing",function() {
+                alert("动画执行完毕");
+            });
+        });
+        $("button").click(function() {
+            // $("div").clearQueue();
+            // $("div").finish();
+            $("div").stop();
+        })
+    })
+</script>
+</body>
+</html>
+<!--
+    1. .animate() 根据一组css属性 执行自定义动画
+    2. .clearQueue() 从队列中移除所有未执行的项
+    3. .delay() 设置一个演示来推迟执行队列中后续的项
+    4. .finish() 停止当前正在运行的动画，删除所有排队的动画，并完成匹配元素所有的动画
+    5. .stop() 停止匹配元素当前正在运行的动画
+-->

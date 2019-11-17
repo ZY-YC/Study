@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float浮动</title>
+    <style>
+        .box {
+            width: 600px;
+            border: 1px solid #000;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            float: right;
+        }
+
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+            float:right;
+        }
+
+        .div3 {
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</div>
+</body>
+</html>
+<!--
+  浮动：
+     浮动可以让元素脱离标准文件流（块级元素和行内元素）,将不占据空间
+     浮动元素遇到上一个浮动元素会停止，
+     将行内元素设置浮动后会变成块级元素
+-->

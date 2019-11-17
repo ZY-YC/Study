@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if</title>
+</head>
+<input type = 'number' value="年龄" id="age">
+<button type="submit" onclick="num()">确认</button>
+<script>
+    function num (){
+        var bum = document.getElementsByTagName("input");
+        console.log(bum["0"].value);
+        console.log("");
+        if(bum["0"].value ===  ""){
+            alert("请输入您的年龄！");
+        }else if(bum["0"].value < 0 || bum["0"].value > 150){
+            alert("请输入您的真实年龄！");
+        }else{
+            if(bum["0"].value >= 18){
+                alert("您已满18，可以进入！！");
+            }else{
+                alert("您未满18，不可进入");
+            }
+        }
+
+    }
+
+</script>
+</body>
+</html>

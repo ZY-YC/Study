@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display</title>
+    <style>
+        #mm {
+            background-color:#00ff00; ;
+            display:inline;
+        }
+        #aa {
+            background-color:#00ff00; ;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p id="mm">Hello</p>
+    <p id="aa">Hello</p>
+</div>
+<script>
+    var mm = document.getElementById("mm");
+    console.log(mm);
+    mm.onclick=function click() {
+        mm.style.display = "none";
+    }
+</script>
+</body>
+</html>
+
+<!--
+   display：
+       display是“显示”的意思，它就是用来进行行内元素与块级元素的转换。
+       将隐藏的元素显示或将显示的元素隐藏
+
+   display: inline(行内),block(块级),none(无)
+
+
+   从块级元素转换为行内元素，将具有行内元素的特点。反之亦然。
+   隐藏和显示一般在js里用
+-->

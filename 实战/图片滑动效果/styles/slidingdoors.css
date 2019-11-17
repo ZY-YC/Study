@@ -1,0 +1,18 @@
+#container{
+    height: 477px;
+    margin: 0 auto;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /*overflow: hidden;*/
+    /*为了让溢出的图片不显示*/
+    position: relative;
+    /*父组件：相对定位*/
+}
+#container img{
+    /*子组件：绝对定位*/
+    position: absolute;
+    /*为灵活的控制img元素，将行内元素变为块元素*/
+    display: block;
+    left:0;
+    border-left:1px solid #ccc;
+}

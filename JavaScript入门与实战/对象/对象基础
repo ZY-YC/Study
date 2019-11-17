@@ -1,0 +1,97 @@
+对象：
+
+   目录：
+      一 JS中的对象
+      二 对象的创建和调用
+      三 this对象
+      四 对象的遍历和删除
+
+
+
+
+
+   一 js中的对象
+       我们可以把JS中的对象想象成键值对，其中值是可以是数据和函数。
+       对象的行为和特征
+          特征----属性
+          行为----方法
+         事物的特征在对象中用属性来表示
+         事物的行为在对象中用方法来表示
+
+
+   二 对象的创建（声明）
+       1.字面量方式创建对象:对象中的数据都是键值成对存在
+          <script>
+            var object = {}; //得到一个空对象
+            var object2 = {
+               name:"西",
+               age:18,
+               fei:function(){
+                  console.log(1);
+               }
+             };
+            //得到拥有两个属性的对象，它的属性分别是，name，age 一个方法fei()
+          </script>
+
+       2.实例化方式 声明对象（内置构造函数）
+           var obj = new Object();
+
+       3.自定义构造函数方式声明对象
+           var f = new fun();
+
+      获取对象的属性和方法：
+          对象.属性名;
+          对象.函数名();
+
+
+   三 this对象：
+        不管在哪，this一定指向一个对象
+        this的指向：
+            this运行在哪个对象下，就运行哪个对象
+      <script>
+
+          var object2 = {
+             name:"西",
+             age:18,
+             fei:function(){
+             //在方法中的this指的就是这个方法所在的对象object2
+                var s = this.age;
+                console.log(s);
+             }
+
+          };
+          object2.fei();
+
+
+
+          //普通的函数中也是有对象的，this指向全局对象，window
+          function(){
+             var s = this.age;
+             console.log(s);
+                       }
+      </script>
+
+
+
+   四 对象的遍历和删除
+
+       <script>
+
+           var object2 = {
+               name:"西",
+               age:18,
+               sex:'男'
+           };
+            //for---in 循环
+            //for（键 in 对象）
+            for(var k = object2) {
+               console.log(object2[k]);
+            }
+             //for---in 遍历数组
+            var arr = [2,4,6,8,10];
+            for(var k = arr) {
+               console.log(arr[k]);
+            }
+
+            delete object2.age;//删除对象object2下的age
+       </script>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history</title>
+</head>
+<body>
+  <p>这是index11.html</p>
+  <p><input type="button" value="后退" id="btn"> </p>
+<script>
+    var btn=document.getElementById("btn");
+    btn.onclick=function () {
+        //history.back();
+        history.go(-1);
+    }
+</script>
+</body>
+</html>
